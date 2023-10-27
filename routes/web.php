@@ -1,18 +1,21 @@
 <?php
 
+use App\Http\Controllers\AdminControllers;
+use App\Http\Controllers\AnggotaControllers;
+use App\Http\Controllers\UmumControllers;
+use App\Http\Controllers\UserControllers;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// Umum
+Route::get('/', [UmumControllers::class, 'Beranda']);
+Route::get('/pemetaan', [UmumControllers::class, 'Pemetaan']);
+Route::get('/login', [UmumControllers::class, 'Login']);
 
-Route::get('/', function () {
-    return view('beranda');
-});
+// Admin
+Route::get('/dashboard', [AdminControllers::class, 'Dashboard']);
+
+// Data User
+Route::get('/data-user', [UserControllers::class, 'index']);
+
+// Data Anggota
+Route::get('/data-anggota', [AnggotaControllers::class, 'index']);
