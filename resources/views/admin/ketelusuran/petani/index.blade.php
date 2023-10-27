@@ -4,7 +4,7 @@
         <div class="d-sm-flex align-items-center justify-content-between text-light">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="teks-manajemen h3 mb-0 text-light">Data Anggota</h1>
+                <h1 class="teks-manajemen h3 mb-0 text-light">Data Petani</h1>
             </div>
             <a href="/manajemen-pengguna/create" class="btn btn-primary btn-sm mb-2">Tambah Data</a>
         </div>

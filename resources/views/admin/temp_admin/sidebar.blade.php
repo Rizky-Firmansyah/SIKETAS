@@ -3,7 +3,6 @@
     <!-- Sidebar - Brand -->
     <div class="sidebar-brand d-flex flex-column align-items-center justify-content-center">
         <img src="{{ asset('assets/images/logo.png') }}" alt="" width="40" height="40">
-        <p class="d-none d-md-block">KUD Sawit Jaya</p>
     </div>
 
     <!-- Divider -->
@@ -34,7 +33,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="/data-anggota">
             <i class="fas fa-fw fa-cog"></i>
             <span>Data Anggota</span>
         </a>
@@ -50,8 +49,8 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="utilities-color.html">Data Petani</a>
-                <a class="collapse-item" href="utilities-border.html">Data Kelompok</a>
+                <a class="collapse-item" href="/data-petani">Data Petani</a>
+                <a class="collapse-item" href="/data-kelompok">Data Kelompok</a>
             </div>
         </div>
     </li>
