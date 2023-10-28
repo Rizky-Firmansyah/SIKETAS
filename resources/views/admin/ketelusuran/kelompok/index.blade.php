@@ -17,27 +17,46 @@
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Role</th>
-                                        <th>Password</th>
-                                        <th>Role</th>
-                                        <th>Aksi</th>
+                                        <th rowspan="2">Kelompok Tani</th>
+                                        <th rowspan="2">Nama Petani</th>
+                                        <th rowspan="2">Tanggal Keberangkatan</th>
+                                        <th rowspan="2">Timbangan Lapangan(Kg)</th>
+                                        <th rowspan="2">Jmlh Janjang</th>
+                                        <th rowspan="2">Tujuan PKS</th>
+                                        <th colspan="3">Identitas Pengendara</th>
+                                        <th colspan="3">Hasil PKS</th>
+                                        <th rowspan="2">Selisih (Kg)</th>
+                                        <th rowspan="2">Aksi</th>
+                                    </tr>
+                                    <tr>
+                                        <th>No SPB</th>
+                                        <th>Nama Supir</th>
+                                        <th>No Kendaraan</th>
+                                        <th>Bruto (Kg)</th>
+                                        <th>Sortasi (Kg)</th>
+                                        <th>Netto (Kg)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
+                                        <td>Karisma</td>
+                                        <td>
+                                            Rizky <br>
+                                            Sandi <br>
+                                            Dadi <br>
+                                            santo
+                                        </td>
+                                        <td>19/08/2023</td>
+                                        <td>38000</td>
+                                        <td>100</td>
+                                        <td>PKS Peputra Masterindo</td>
+                                        <td>SPB1234567</td>
+                                        <td>Rizky Firmansyah</td>
+                                        <td>BM 1234 MB</td>
+                                        <td>3850</td>
+                                        <td>50</td>
+                                        <td>3800</td>
+                                        <td>0</td>
                                         <td>
                                             <a href="" class="btn btn-warning my-1 btn-sm">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"

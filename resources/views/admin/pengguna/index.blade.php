@@ -26,10 +26,10 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
+                                        <td>Rizky Firmansyah</td>
+                                        <td>rizkyfirmansyah13@gmail.com</td>
+                                        <td>adasdasd213123asda</td>
+                                        <td>Admin</td>
                                         <td>
                                             <a href="" class="btn btn-warning my-1 btn-sm">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"

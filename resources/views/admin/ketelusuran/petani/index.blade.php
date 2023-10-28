@@ -17,19 +17,30 @@
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Role</th>
-                                        <th>Password</th>
-                                        <th>Role</th>
-                                        <th>Aksi</th>
+                                        <th rowspan="2">Nama Petani</th>
+                                        <th rowspan="2">Kelompok Tani</th>
+                                        <th colspan="3">Tgl/Bln/Thn</th>
+                                        <th colspan="3">Tonase Panen</th>
+                                        <th colspan="3">Jumlah Janjang</th>
+                                        <th rowspan="2">Aksi</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Panen I</th>
+                                        <th>Panen II</th>
+                                        <th>Panen III</th>
+                                        <th>Panen I</th>
+                                        <th>Panen II</th>
+                                        <th>Panen III</th>
+                                        <th>Panen I</th>
+                                        <th>Panen II</th>
+                                        <th>Panen III</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td>AKU</td>
+                                        <td>AKU</td>
+                                        <td>AKU</td>
                                         <td>AKU</td>
                                         <td>AKU</td>
                                         <td>AKU</td>

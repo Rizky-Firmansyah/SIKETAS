@@ -17,27 +17,26 @@
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Role</th>
-                                        <th>Password</th>
-                                        <th>Role</th>
+                                        <th>Nama Petani</th>
+                                        <th>Kelompok Tani</th>
+                                        <th>Alamat</th>
+                                        <th>No. Hp</th>
+                                        <th>Umur</th>
+                                        <th>Luas Lahan (ha)</th>
+                                        <th>No Sertifikat Tanah</th>
                                         <th>Aksi</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
-                                        <td>AKU</td>
+                                        <td>Rizky Firmansyah</td>
+                                        <td>Karisma</td>
+                                        <td>Jl. Pangkalan Durian Kec. Sungai Sembilan Kel. Suungai Geniot Kota Dumai</td>
+                                        <td>082288190446</td>
+                                        <td>21</td>
+                                        <td>100</td>
+                                        <td>sert12345678</td>
                                         <td>
                                             <a href="" class="btn btn-warning my-1 btn-sm">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
