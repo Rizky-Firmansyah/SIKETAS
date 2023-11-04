@@ -18,10 +18,22 @@
                                     <div class="p-5">
                                         <div class="text-center">
                                         </div>
-                                        <form class="user" action="" method="POST">
+                                        <form action="" method="POST">
+                                            @csrf
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $item)
+                                                            <li class="d-flex justify-content-start">{{ $item }}
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
                                             <div class="form-group">
                                                 <label for="exampleFormControlInput1">Masukkan E-Mail Anda</label>
-                                                <input type="email" name="email" class="form-control form-control-user">
+                                                <input type="email" name="email" class="form-control form-control-user"
+                                                    value="{{ old('email') }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleFormControlInput1">Masukkan Password Anda</label>
@@ -29,7 +41,7 @@
                                                     class="form-control form-control-user">
                                             </div>
                                             <center>
-                                                <button class="btn btn-primary  btn-">Login</button>
+                                                <button class="btn btn-primary" type="submit" name="submit">Login</button>
                                             </center>
                                             <br>
                                         </form>
@@ -38,7 +50,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
