@@ -2,51 +2,45 @@
 
 @section('content')
     {{-- Content --}}
-    <div style="background-image: url('{{ asset('assets/images/kud.jpeg') }}')">
+    <div class="bg-gambar">
         <div class="container">
 
+            <!-- Outer Row -->
+            <div class="row justify-content-center ">
 
+                <div class="col-xl-5 col-lg-12 col-md-9">
 
-            <section class="ftco-section">
-                <div class="container mt-5">
-                    <div class="row justify-content-center">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="login-wrap p-0">
-                                <h3 class="mb-4 mt-5 text-center">Silahkan Login Jika Memiliki Akun</h3>
-                                <form action="" class="signin-form" method="POST">
-                                    @csrf
-                                    @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <ul>
-                                                @foreach ($errors->all() as $item)
-                                                    <li class="d-flex justify-content-start">{{ $item }}</li>
-                                                @endforeach
-                                            </ul>
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="p-5">
+                                        <div class="text-center">
                                         </div>
-                                    @endif
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="E-Mail" name="email"
-                                            value="{{ old('email') }}" required>
+                                        <form class="user" action="" method="POST">
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Masukkan E-Mail Anda</label>
+                                                <input type="email" name="email" class="form-control form-control-user">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Masukkan Password Anda</label>
+                                                <input type="password" name="password"
+                                                    class="form-control form-control-user">
+                                            </div>
+                                            <center>
+                                                <button class="btn btn-primary  btn-">Login</button>
+                                            </center>
+                                            <br>
+                                        </form>
                                     </div>
-                                    <div class="form-group">
-                                        <input id="password-field" type="password" name="password" class="form-control"
-                                            placeholder="Password" required>
-                                        <span toggle="#password-field"
-                                            class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" name="submit"
-                                            class="form-control btn btn-primary submit px-3">Login</button>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-            </section>
-
-
-
+            </div>
         </div>
     </div>
 

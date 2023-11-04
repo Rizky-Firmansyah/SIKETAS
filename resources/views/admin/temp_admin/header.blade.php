@@ -3,6 +3,5 @@
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-5 btn-light">
         <i class="fa fa-bars"></i>
     </button>
-    <span>Sistem Informasi Ketelusuran Sawit</span>
-
+    <span>Koperasi Unit Daerah Sawit Jaya</span>
 </nav>
