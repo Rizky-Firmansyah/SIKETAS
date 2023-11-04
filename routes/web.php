@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\AnggotaControllers;
 use App\Http\Controllers\KelompokControllers;
@@ -7,7 +8,6 @@ use App\Http\Controllers\PetaniControllers;
 use App\Http\Controllers\RoleControllers;
 use App\Http\Controllers\UmumControllers;
 use App\Http\Controllers\UserControllers;
-use Illuminate\Support\Facades\Route;
 
 // Umum
 Route::get('/', [UmumControllers::class, 'Beranda']);
@@ -19,9 +19,13 @@ Route::get('/dashboard', [AdminControllers::class, 'Dashboard']);
 
 // Data Role
 Route::get('/data-role', [RoleControllers::class, 'index']);
+Route::get('/data-role/create', [RoleControllers::class, 'create']);
+Route::post('/data-role/createData', [RoleControllers::class, 'createData']);
 
 // Data User
 Route::get('/data-user', [UserControllers::class, 'index']);
+Route::get('/data-user/create', [UserControllers::class, 'create']);
+Route::post('/data-user/createData', [UserControllers::class, 'createData']);
 
 // Data Anggota
 Route::get('/data-anggota', [AnggotaControllers::class, 'index']);
