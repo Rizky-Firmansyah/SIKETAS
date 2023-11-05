@@ -9,6 +9,8 @@ class UserModels extends Model
 {
     use HasFactory;
     protected $table = 'tb_user';
+    // protected $primaryKey = 'id_user';
 
     protected $guarded = [];
+
 }

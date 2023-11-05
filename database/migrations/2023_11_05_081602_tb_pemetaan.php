@@ -12,9 +12,12 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('tb_kelompok', function (Blueprint $table) {
-            $table->bigIncrements('id_kelompok');
-            $table->string('kelompok', 45);
+        Schema::create('tb_pemetaan', function (Blueprint $table) {
+            $table->bigIncrements('id_pemetaan');
+            $table->integer('id_panen_petani');
+            $table->integer('id_anggota');
+            $table->integer('lat');
+            $table->integer('long');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('tb_kelompok');
+        Schema::dropIfExists('tb_anggota');
     }
 };

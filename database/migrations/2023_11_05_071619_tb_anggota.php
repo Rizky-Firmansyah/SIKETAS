@@ -12,16 +12,18 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('tb_user', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('tb_anggota', function (Blueprint $table) {
+            $table->bigIncrements('id_anggota');
             $table->integer('id_kelompok');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('nama_petani', 45);
+            $table->string('alamat', 45);
+            $table->string('no_hp', 45);
+            $table->integer('umur');
+            $table->integer('luas_lahan');
+            $table->string('no_sertifikat', 45);
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -29,6 +31,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('tb_user');
+        Schema::dropIfExists('tb_anggota');
     }
 };

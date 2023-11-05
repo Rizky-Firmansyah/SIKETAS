@@ -43,7 +43,7 @@
                                 <select class="custom-select" name="role">
                                     <option selected>Pilih Role Pengguna</option>
                                     @foreach ($kelompok as $item)
-                                        <option value="{{ $item->kelompok }}">{{ $item->kelompok }}</option>
+                                        <option value="{{ $item->id_kelompok }}">{{ $item->kelompok }}</option>
                                     @endforeach
                                 </select>
                             </div>

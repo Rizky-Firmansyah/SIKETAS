@@ -15,12 +15,14 @@ class LoginControllers extends Controller
             'password' => $request->password,
         ];
 
+        // dd($infoLogin);
         if (Auth::attempt($infoLogin)) {
             $user = Auth::user();
-
-            if (Auth::user()->role == 'Super Admin') {
-                session(['user' => $user]); // Simpan data pengguna dalam sesi
+            if (Auth::user()->id_kelompok == '1') {
+                session(['user' => $user]);
                 return redirect('/dashboard');
+            } else {
+                return redirect('/login')->withErrors('Anda Tidak Di Izinkan Masuk')->withInput();
             }
         } else {
             return redirect('/login')->withErrors('Email atau Password yang dimasukkan salah')->withInput();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginControllers;
+use App\Http\Controllers\PemetaanControllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\AnggotaControllers;
@@ -23,6 +24,8 @@ Route::middleware(['guest'])->group(function () {
 });
 
 
+
+
 Route::middleware(['auth'])->group(function () {
     // Admin
     Route::get('/dashboard', [AdminControllers::class, 'Dashboard']);
@@ -39,14 +42,24 @@ Route::middleware(['auth'])->group(function () {
 
     // Data Anggota
     Route::get('/data-anggota', [AnggotaControllers::class, 'index']);
+    Route::get('/data-anggota/create', [AnggotaControllers::class, 'create']);
+    Route::post('/data-anggota/createData', [AnggotaControllers::class, 'createData']);
+
+    // Data Pemetaan
+    Route::get('/data-pemetaan', [PemetaanControllers::class, 'index']);
+    Route::get('/data-pemetaan/create', [PemetaanControllers::class, 'create']);
+    Route::post('/data-pemetaan/createData', [PemetaanControllers::class, 'createData']);
 
     // Data Petani
     Route::get('/data-petani', [PetaniControllers::class, 'index']);
+    Route::get('/data-petani/create', [PetaniControllers::class, 'create']);
+    Route::post('/data-petani/createData', [PetaniControllers::class, 'createData']);
+    Route::get('/data-petani/{id_panen_petani}/update', [PetaniControllers::class, 'update']);
+    Route::put('/data-petani/{id_panen_petani}/updateData', [PetaniControllers::class, 'updateData']);
+    Route::get('/data-petani/{id_panen_petani}/delet', [PetaniControllers::class, 'delete']);
 
     // Data Kelompok
     Route::get('/data-kelompok', [KelompokControllers::class, 'index']);
-
-
     // Untuk Log Out Semua Pengguna
     Route::get('/logout', [LoginControllers::class, 'logout'])->name('logout');
 });

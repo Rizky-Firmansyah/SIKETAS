@@ -4,29 +4,35 @@
         <div class="d-sm-flex align-items-center justify-content-between text-light">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="teks-manajemen h3 mb-0 text-light">Data Role</h1>
+                <h1 class="teks-manajemen h3 mb-0 text-light">Data User</h1>
             </div>
-            <a href="/data-role/create" class="btn btn-primary btn-sm mb-2">Tambah Data</a>
+            <a href="/data-pemetaan/create" class="btn btn-primary btn-sm mb-2">Tambah Data</a>
         </div>
         <div class="container">
+
             <div class="row">
-                <div class="card w-100" style="overflow: auto;">
+                <div class="card w-100">
                     <div class="card-body">
                         <div class="container">
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Role</th>
+                                        <th>Nama Kelompok</th>
+                                        <th>Nama Petani</th>
+                                        <th>Lat</th>
+                                        <th>Long</th>
+                                        <th>Tonase/Bulan</th>
                                         <th>Aksi</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($role as $item)
+                                    @foreach ($pemetaan as $item)
                                         <tr>
-                                            <td>{{ $item->id_kelompok }}</td>
                                             <td>{{ $item->kelompok }}</td>
+                                            <td>{{ $item->nama_petani }}</td>
+                                            <td>{{ $item->long }}</td>
+                                            <td>{{ $item->lat }}</td>
+                                            <td>{{ $item->total_tonase }}</td>
                                             <td>
                                                 <a href="" class="btn btn-warning my-1 btn-sm">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"

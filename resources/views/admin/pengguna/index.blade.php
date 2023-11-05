@@ -30,7 +30,7 @@
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->password }}</td>
-                                            <td>{{ $item->role }}</td>
+                                            <td>{{ $item->kelompok }}</td>
                                             <td>
                                                 <a href="" class="btn btn-warning my-1 btn-sm">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"

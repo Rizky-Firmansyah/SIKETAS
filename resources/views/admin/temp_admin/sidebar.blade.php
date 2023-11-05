@@ -57,7 +57,7 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/data-anggota">Data Anggota</a>
-                <a class="collapse-item" href="/data-kelompok">Data Pemetaan</a>
+                <a class="collapse-item" href="/data-pemetaan">Data Pemetaan</a>
             </div>
         </div>
     </li>
