@@ -16,15 +16,9 @@ return new class extends Migration {
             $table->bigIncrements('id_panen_petani');
             $table->integer('id_anggota');
             $table->integer('id_kelompok');
-            $table->date('tgl_panen1')->nullable();
-            $table->date('tgl_panen2')->nullable();
-            $table->date('tgl_panen3')->nullable();
-            $table->integer('tonase_panen1')->nullable();
-            $table->integer('tonase_panen2')->nullable();
-            $table->integer('tonase_panen3')->nullable();
-            $table->integer('jumlah_janjang1')->nullable();
-            $table->integer('jumlah_janjang2')->nullable();
-            $table->integer('jumlah_janjang3')->nullable();
+            $table->integer('id_tgl_panen');
+            $table->integer('total_tonase_petani');
+            $table->integer('total_janjang_petani');
             $table->integer('total_tonase');
             $table->integer('total_janjang');
             $table->timestamps();

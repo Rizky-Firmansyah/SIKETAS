@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\SuperAdmin;
 
+use App\Http\Controllers\Controller;
 use App\Models\AnggotaModels;
 use App\Models\PemetaanModels;
 use App\Models\RoleModels;

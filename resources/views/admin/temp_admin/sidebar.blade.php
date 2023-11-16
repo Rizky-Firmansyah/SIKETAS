@@ -73,7 +73,7 @@
         <div id="collapseUtilities3" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="/data-petani">Data Panen Petani</a>
+                <a class="collapse-item" href="/tanggal-panen">Data Panen Anggota</a>
                 <a class="collapse-item" href="/data-kelompok">Data Panen Kelompok</a>
             </div>
         </div>

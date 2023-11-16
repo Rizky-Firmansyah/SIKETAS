@@ -12,4 +12,10 @@ class RoleModels extends Model
     protected $primaryKey = 'id_kelompok';
 
     protected $guarded = [];
+
+    public function panenPetani()
+    {
+        return $this->hasMany(PanenPetaniModels::class, 'id_kelompok');
+    }
+
 }

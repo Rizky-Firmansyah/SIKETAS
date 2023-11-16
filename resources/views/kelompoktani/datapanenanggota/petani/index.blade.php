@@ -1,4 +1,4 @@
-@extends('admin.temp_admin.index')
+@extends('kelompoktani.temp_kelompok.index')
 @section('content')
     <div class="container-fluid" style="background: #313145">
         <div class="d-sm-flex align-items-center justify-content-between text-light">
@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <a href="/tanggal-panen" class="btn btn-primary btn-sm mb-2">
+            <a href="/tanggal-panen-anggota" class="btn btn-primary btn-sm mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -17,7 +17,7 @@
                         d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
                 </svg>
             </a>
-            <a href="/data-petani/create/{{ $id_tanggal_panen }}" class="btn btn-primary btn-sm mb-2">Tambah Data</a>
+            <a href="/data-panen-anggota/create/{{ $id_tanggal_panen }}" class="btn btn-primary btn-sm mb-2">Tambah Data</a>
         </div>
         <div class="container">
             <div class="row">
@@ -47,7 +47,7 @@
                                             <td>{{ $item->total_tonase_petani }}</td>
                                             <td>{{ $item->total_janjang_petani }}</td>
                                             <td>
-                                                <a href="data-petani/{{ $item->id_panen_petani }}/update"
+                                                <a href="data-panen-anggota/{{ $item->id_panen_petani }}/update"
                                                     class="btn btn-warning my-1 btn-sm">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                         fill="currentColor" class="bi bi-arrow-clockwise"

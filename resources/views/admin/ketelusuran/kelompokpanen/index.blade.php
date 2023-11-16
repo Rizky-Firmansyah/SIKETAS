@@ -37,7 +37,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($kelompok as $item)
+                                    {{-- @foreach ($kelompok as $item)
                                         <tr>
                                             <td>
                                                 <a href="/data-kelompok-panen/"
@@ -77,7 +77,7 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endforeach --}}
                                 </tbody>
                             </table>
                         </div>

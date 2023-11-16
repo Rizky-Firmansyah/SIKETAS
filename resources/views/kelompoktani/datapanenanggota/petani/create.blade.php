@@ -1,4 +1,4 @@
-@extends('admin.temp_admin.index')
+@extends('kelompoktani.temp_kelompok.index')
 @section('content')
     <div class="container-fluid">
 
@@ -8,7 +8,7 @@
         </div>
 
         <div class="d-sm-flex align-items-center justify-content-between">
-            <a href="/data-petani/{{ $id_tanggal_panen }}" class="btn btn-primary btn-sm mb-2">
+            <a href="/data-panen-anggota/{{ $id_tanggal_panen }}" class="btn btn-primary btn-sm mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -23,37 +23,20 @@
                 <div class="card w-100">
 
                     <div class="card-body">
-                        <form action="/data-petani/createData/{{ $id_tanggal_panen }}" method="POST">
+                        <form action="/data-panen-anggota/createData/{{ $id_tanggal_panen }}" method="POST">
                             @csrf
-                            {{-- <div class="mb-3">
-                                <label class="form-label">Nama Kelompok</label>
-                                <select class="custom-select" name="kelompok">
-                                    <option selected>Pilih Nama Kelompok</option>
-                                    @foreach ($kelompok as $item)
-                                        @if ($item->kelompok !== 'Super Admin')
-                                            <option value="{{ $item->id_kelompok }}">{{ $item->kelompok }}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
-                            </div> --}}
-
-                            <div class="mb-3">
-                                @foreach ($anggota as $item)
-                                @endforeach
-                                <input type="hidden" class="form-control" name="id_kelompok"
-                                    value="{{ $item->id_kelompok }}">
-                            </div>
-
                             <div class="mb-3">
                                 <label class="form-label">Nama Petani</label>
                                 <select class="custom-select" name="anggota">
                                     <option selected>Pilih Nama Petani</option>
                                     @foreach ($anggota as $item)
-                                        <option value="{{ $item->id_anggota }}">{{ $item->nama_petani }}</option>
+                                        @if ($item->id_kelompok == Auth::user()->id_kelompok)
+                                            <option value="{{ $item->id_anggota }}">{{ $item->nama_petani }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
-
+                            {{-- Panen 1 --}}
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
