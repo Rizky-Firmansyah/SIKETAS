@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\SuperAdmin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AnggotaModels;
@@ -84,23 +84,23 @@ class PetaniControllers extends Controller
 
     }
 
-    public function getDataPanen($idTanggalPanen)
-    {
-        $totalTonaseKeseluruhan = DB::table('tb_panen_petani')
-            ->where('id_tgl_panen', $idTanggalPanen)
-            ->sum('total_tonase_petani');
+    // public function getDataPanen($idTanggalPanen)
+    // {
+    //     $totalTonaseKeseluruhan = DB::table('tb_panen_petani')
+    //         ->where('id_tgl_panen', $idTanggalPanen)
+    //         ->sum('total_tonase_petani');
 
-        $totalJanjangKeseluruhan = DB::table('tb_panen_petani')
-            ->where('id_tgl_panen', $idTanggalPanen)
-            ->sum('total_janjang_petani');
+    //     $totalJanjangKeseluruhan = DB::table('tb_panen_petani')
+    //         ->where('id_tgl_panen', $idTanggalPanen)
+    //         ->sum('total_janjang_petani');
 
-        $dataPanen = DB::table('tb_panen_petani')
-            ->select('id_panen_petani', 'id_anggota', 'id_kelompok', 'id_tgl_panen', 'total_tonase_petani', 'total_janjang_petani', 'total_tonase', 'total_janjang')
-            ->where('id_tgl_panen', $idTanggalPanen)
-            ->get();
+    //     $dataPanen = DB::table('tb_panen_petani')
+    //         ->select('id_panen_petani', 'id_anggota', 'id_kelompok', 'id_tgl_panen', 'total_tonase_petani', 'total_janjang_petani', 'total_tonase', 'total_janjang')
+    //         ->where('id_tgl_panen', $idTanggalPanen)
+    //         ->get();
 
-        return view('admin.ketelesuran.admin.index', compact('dataPanen', 'totalTonaseKeseluruhan', 'totalJanjangKeseluruhan'));
-    }
+    //     return view('admin.ketelesuran.admin.index', compact('dataPanen', 'totalTonaseKeseluruhan', 'totalJanjangKeseluruhan'));
+    // }
 
 
 }

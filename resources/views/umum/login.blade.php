@@ -4,19 +4,19 @@
     {{-- Content --}}
     <div class="bg-gambar">
         <div class="container">
-
             <!-- Outer Row -->
             <div class="row justify-content-center ">
-
                 <div class="col-xl-5 col-lg-12 col-md-9">
-
                     <div class="card o-hidden border-0 shadow-lg my-5">
-                        <div class="card-body p-0">
+                        <div class="card-body p-0" style="background-color: #D9D9D9">
                             <!-- Nested Row within Card Body -->
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="p-5">
                                         <div class="text-center">
+                                            <div class="card mb-5">
+                                                <h1 class="font-weight-bold">Login</h1>
+                                            </div>
                                         </div>
                                         <form action="" method="POST">
                                             @csrf
@@ -31,13 +31,11 @@
                                                 </div>
                                             @endif
                                             <div class="form-group">
-                                                <label for="exampleFormControlInput1">Masukkan E-Mail Anda</label>
                                                 <input type="email" name="email" class="form-control form-control-user"
-                                                    value="{{ old('email') }}" required>
+                                                    placeholder="Masukkan E-Mail Anda" value="{{ old('email') }}" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleFormControlInput1">Masukkan Password Anda</label>
-                                                <input type="password" name="password"
+                                                <input type="password" name="password" placeholder="Masukkan Password Anda"
                                                     class="form-control form-control-user">
                                             </div>
                                             <center>
@@ -56,9 +54,9 @@
     </div>
 
     {{-- Footer --}}
-    <div class="fixed-bottom bg-info pt-2">
+    <div class="fixed-bottom pt-2" style="background-color: #006F1F">
         <center>
-            <p style="font-weight: bolder">&copy; 2023 KUD Sawit Jaya x Rizky Firmansyah x Romi Irawan.</p>
+            <p class="font-weight-bold text-light">&copy; 2023 KUD Sawit Jaya x Rizky Firmansyah x Romi Irawan.</p>
         </center>
     </div>
 @endsection

@@ -13,7 +13,7 @@
 
     /* CSS untuk tampilan mobile */
     @media screen and (max-width: 767px) {
-        .bg-gambar {
+        body {
             background-image: url("{{ asset('assets/images/kud.jpeg') }}");
             background-repeat: no-repeat;
             background-size: cover;

@@ -7,7 +7,7 @@ use App\Models\RoleModels;
 use App\Models\UserModels;
 use Illuminate\Http\Request;
 
-class UserControllers extends Controller
+class PenggunaControllers extends Controller
 {
     function index()
     {
@@ -15,7 +15,7 @@ class UserControllers extends Controller
             ->join('tb_kelompok', 'tb_user.id_kelompok', '=', 'tb_kelompok.id_kelompok')
             ->get();
 
-        return view('admin.pengguna.index', compact('user'));
+        return view('superadmin.pengguna.index', compact('user'));
     }
 
     function create(Request $request)

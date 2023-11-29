@@ -4,7 +4,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-light">Form Tambah Role</h1>
+            <h1 class="h3 mb-0" style="color: black">Tambah Data Role</h1>
         </div>
 
         <div class="d-sm-flex align-items-center justify-content-between">
@@ -18,21 +18,16 @@
                 </svg>
             </a>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="card w-100">
-
-                    <div class="card-body">
-                        <form action="/data-role/createData" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label class="form-label">Role</label>
-                                <input type="text" class="form-control" placeholder="Isi Nama Role" name="kelompok">
-                            </div>
-                            <button type="submit" value="submit" class="btn btn-primary">Simpan Data</button>
-                        </form>
+        <div class="card w-100" style="background-color: #D9D9D9">
+            <div class="card-body">
+                <form action="/data-role/createData" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label class="form-label">Role</label>
+                        <input type="text" class="form-control" placeholder="Isi Nama Role" name="kelompok">
                     </div>
-                </div>
+                    <button type="submit" value="submit" class="btn btn-primary">Simpan Data</button>
+                </form>
             </div>
         </div>
     </div>

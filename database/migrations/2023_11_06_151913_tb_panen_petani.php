@@ -19,8 +19,6 @@ return new class extends Migration {
             $table->integer('id_tgl_panen');
             $table->integer('total_tonase_petani');
             $table->integer('total_janjang_petani');
-            $table->integer('total_tonase');
-            $table->integer('total_janjang');
             $table->timestamps();
         });
     }

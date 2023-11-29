@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PanenAnggotaControllers extends Controller
 {
+
     function index($id_tanggal_panen)
     {
         $join = PanenPetaniModels::select('tb_panen_petani.*', 'tb_anggota.nama_petani', 'tb_kelompok.kelompok')

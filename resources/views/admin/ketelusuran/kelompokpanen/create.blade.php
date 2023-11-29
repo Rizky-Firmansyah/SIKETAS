@@ -8,7 +8,7 @@
         </div>
 
         <div class="d-sm-flex align-items-center justify-content-between">
-            <a href="/data-kelompok" class="btn btn-primary btn-sm mb-2">
+            <a href="/data-kelompok-panen/{{ $id_panen_kelompok }}" class="btn btn-primary btn-sm mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -23,12 +23,13 @@
                 <div class="card w-100">
 
                     <div class="card-body">
-                        <form action="/data-kelompok/createData" method="POST">
+                        <form action="/data-kelompok-panen/createData/{{ $id_panen_kelompok }}" method="POST">
                             @csrf
+
                             <div class="mb-3">
                                 <label class="form-label">Nama Kelompok</label>
-                                <select class="custom-select" name="nama_kelompok">
-                                    <option selected>Pilih Kelompok</option>
+                                <select class="custom-select" name="id_kelompok" id="nama_kelompok">
+                                    <option selected disabled>Pilih Kelompok</option>
                                     @foreach ($kelompok as $item)
                                         @if ($item->kelompok !== 'Super Admin')
                                             <option value="{{ $item->id_kelompok }}">{{ $item->kelompok }}</option>
@@ -36,66 +37,15 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Tanggal Keberangkatan</label>
-                                <input type="date" class="form-control" name="tanggal_keberangkatan">
-                            </div>
 
                             <div class="mb-3">
-                                <label class="form-label">Tujuan Pabrik Kelapa Sawit</label>
-                                <input type="text" class="form-control" placeholder="Isi Tujuan Pabrik Kelapa Sawit"
-                                    name="tujuan_pks">
+                                <label class="form-label">Tanggal Panen</label>
+                                <select class="custom-select" name="id_panen_petani" id="tanggal_panen" disabled>
+                                    <option selected disabled>Pilih Tanggal Panen</option>
+                                </select>
                             </div>
 
-                            <label class="form-label">Identitas Pengendara</label>
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="form-label">Nomor Surat Pengantar Barang</label>
-                                        <input type="text" class="form-control"
-                                            placeholder="Isi Nomor Surat Pengantar Barang" name="no_spb">
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="form-label">Nama Sopir</label>
-                                        <input type="text" class="form-control" placeholder="Isi Nama Sopir"
-                                            name="nama_supir">
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="form-label">Nomor Kendaraan</label>
-                                        <input type="text" class="form-control" placeholder="Isi Nomor Kendaraan"
-                                            name="no_kendaraan">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <label class="form-label">Hasil Pabrik Kelapa Sawit</label>
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="form-label">Bruto</label>
-                                        <input type="text" class="form-control" placeholder="Isi Hasil Bruto"
-                                            name="bruto">
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="form-label">Sortasi</label>
-                                        <input type="text" class="form-control" placeholder="Isi Hasil Sortasi"
-                                            name="sortasi">
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="form-label">Netto</label>
-                                        <input type="text" class="form-control" placeholder="Isi Hasil Netto"
-                                            name="netto">
-                                    </div>
-                                </div>
-                            </div>
 
                             <button type="submit" value="submit" class="btn btn-primary">Simpan Data</button>
                         </form>
@@ -104,4 +54,37 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var tanggalPanenOptions = '';
+        @foreach ($tanggal_panen as $item)
+            tanggalPanenOptions +=
+                '<option value="{{ $item->id_tanggal_panen }}" data-kelompok="{{ $item->id_kelompok }}">{{ $item->tanggal->format('d F Y') }}</option>';
+        @endforeach
+
+        document.getElementById('nama_kelompok').addEventListener('change', function() {
+            var selectedKelompok = this.value;
+            var tanggalPanenDropdown = document.getElementById('tanggal_panen');
+
+            // Kosongkan opsi sebelum menambahkan yang baru
+            tanggalPanenDropdown.innerHTML = '<option selected disabled>Pilih Tanggal Panen</option>';
+
+            // Tambahkan opsi berdasarkan kelompok yang dipilih
+            tanggalPanenDropdown.innerHTML += tanggalPanenOptions;
+
+            // Filter opsi berdasarkan kelompok yang dipilih
+            for (var i = 0; i < tanggalPanenDropdown.options.length; i++) {
+                var option = tanggalPanenDropdown.options[i];
+                if (option.getAttribute('data-kelompok') == selectedKelompok || option.getAttribute(
+                        'data-kelompok') == null) {
+                    option.style.display = 'block';
+                } else {
+                    option.style.display = 'none';
+                }
+            }
+
+            // Aktifkan dropdown tanggal panen
+            tanggalPanenDropdown.removeAttribute('disabled');
+        });
+    </script>
 @endsection

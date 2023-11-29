@@ -1,27 +1,27 @@
 <?php
 
+use App\Http\Controllers\SuperAdmin\DashboardSuperAdmin;
+use App\Http\Controllers\SuperAdmin\PenggunaControllers;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PanenKelompokControllers;
+use App\Http\Controllers\Admin\KendaraanControllers;
+use App\Http\Controllers\Admin\SopirControllers;
 use App\Http\Controllers\KelompokTani\PanenAnggotaControllers;
 use App\Http\Controllers\KelompokTani\TanggalPanenAnggotaControllers;
-use App\Http\Controllers\SuperAdmin\PanenKelompokControllers;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KelompokTani\DashboardPetaniControllers;
-use App\Http\Controllers\SuperAdmin\LoginControllers;
-use App\Http\Controllers\SuperAdmin\PemetaanControllers;
-use App\Http\Controllers\SuperAdmin\TanggalPanenControllers;
-use App\Http\Controllers\SuperAdmin\AdminControllers;
-use App\Http\Controllers\SuperAdmin\AnggotaControllers;
-use App\Http\Controllers\SuperAdmin\KelompokControllers;
-use App\Http\Controllers\SuperAdmin\PetaniControllers;
-use App\Http\Controllers\SuperAdmin\RoleControllers;
-use App\Http\Controllers\SuperAdmin\UserControllers;
+use App\Http\Controllers\Admin\LoginControllers;
+use App\Http\Controllers\Admin\PemetaanControllers;
+use App\Http\Controllers\Admin\TanggalPanenControllers;
+use App\Http\Controllers\Admin\AdminControllers;
+use App\Http\Controllers\Admin\AnggotaControllers;
+use App\Http\Controllers\Admin\PetaniControllers;
+use App\Http\Controllers\Admin\RoleControllers;
+use App\Http\Controllers\Admin\UserControllers;
 use App\Http\Controllers\UmumControllers;
 
-// Umum
-Route::get('/', [UmumControllers::class, 'Beranda']);
-Route::get('/pemetaan', [UmumControllers::class, 'Pemetaan']);
-
-
-
+/**
+ * Route Untuk Umum
+ */
 Route::middleware(['web', 'guest'])->group(function () {
     //Tampilan Login
     Route::get('/login', [UmumControllers::class, 'login'])->name('login');
@@ -29,13 +29,22 @@ Route::middleware(['web', 'guest'])->group(function () {
     Route::get('/home', function () {
         return redirect('/login');
     });
+    Route::get('/', [UmumControllers::class, 'Beranda']);
+    Route::get('/pemetaan', [UmumControllers::class, 'Pemetaan']);
 });
 
 
+/**
+ * Route Untuk Super Admin
+ */
+
+Route::get('/dashboard-super-admin', [DashboardSuperAdmin::class, 'index']);
+
+Route::get('/data-pengguna', [PenggunaControllers::class, 'index']);
 
 
 /**
- * Code Dibawah Ini Untuk Rute Super Admin
+ * Code Dibawah Ini Untuk Rute Admin
  */
 Route::middleware(['auth', 'check.user:1'])->group(function () {
 
@@ -52,6 +61,16 @@ Route::middleware(['auth', 'check.user:1'])->group(function () {
     Route::get('/data-user/create', [UserControllers::class, 'create']);
     Route::post('/data-user/createData', [UserControllers::class, 'createData']);
 
+    // Data Nama Sopir
+    Route::get('/data-sopir', [SopirControllers::class, 'index']);
+    Route::get('/data-sopir/create', [SopirControllers::class, 'create']);
+    Route::post('/data-sopir/createData', [SopirControllers::class, 'createData']);
+
+    //Data Kendaraan
+    Route::get('/data-kendaraan', [KendaraanControllers::class, 'index']);
+    Route::get('/data-kendaraan/create', [KendaraanControllers::class, 'create']);
+    Route::post('/data-kendaraan/createData', [KendaraanControllers::class, 'createData']);
+
     // Data Anggota
     Route::get('/data-anggota', [AnggotaControllers::class, 'index']);
     Route::get('/data-anggota/create', [AnggotaControllers::class, 'create']);
@@ -67,6 +86,7 @@ Route::middleware(['auth', 'check.user:1'])->group(function () {
     Route::get('/tanggal-panen/create', [TanggalPanenControllers::class, 'create']);
     Route::post('/tanggal-panen/createData', [TanggalPanenControllers::class, 'createData']);
 
+
     // Data Panen Anggota
     Route::get('/data-petani/{id_tanggal_panen}', [PetaniControllers::class, 'index']);
     Route::get('/data-petani/create/{id_tanggal_panen}', [PetaniControllers::class, 'create']);
@@ -76,13 +96,14 @@ Route::middleware(['auth', 'check.user:1'])->group(function () {
     Route::get('/data-petani/{id_panen_petani}/delete', [PetaniControllers::class, 'delete']);
 
     // Data Panen Kelompok
-    Route::get('/data-kelompok', [KelompokControllers::class, 'index']);
-    Route::get('/data-kelompok/create', [KelompokControllers::class, 'create']);
-    Route::post('/data-kelompok/createData', [KelompokControllers::class, 'createData']);
+    Route::get('/data-panen-kelompok', [PanenKelompokControllers::class, 'index']);
+    Route::get('/data-panen-kelompok/create', [PanenKelompokControllers::class, 'create']);
+    Route::post('/data-panen-kelompok/createData', [PanenKelompokControllers::class, 'createData']);
+
     // Data Kelompok Panen
-    Route::get('/data-kelompok-panen', [PanenKelompokControllers::class, 'index']);
-    Route::get('/data-kelompok-panen/create', [PanenKelompokControllers::class, 'create']);
-    Route::post('/data-kelompok-panen/createData', [PanenKelompokControllers::class, 'createData']);
+    // Route::get('/data-kelompok-panen/{id_panen_kelompok}', [KelompokPanenControllers::class, 'index']);
+    // Route::get('/data-kelompok-panen/create/{id_panen_kelompok}', [KelompokPanenControllers::class, 'create']);
+    // Route::post('/data-kelompok-panen/createData/{id_panen_kelompok}', [KelompokPanenControllers::class, 'createData']);
 
     // Untuk Log Out Semua Pengguna
     Route::get('/logout', [LoginControllers::class, 'logout'])->name('logout');

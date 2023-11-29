@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('tb_tanggal_panen', function (Blueprint $table) {
             $table->bigIncrements('id_tanggal_panen');
-            $table->integer('id_panen_petani')->nullable();
+            $table->integer('id_kelompok');
             $table->date('tanggal');
             $table->timestamps();
         });

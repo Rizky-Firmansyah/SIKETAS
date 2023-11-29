@@ -15,7 +15,8 @@
 
 </head>
 
-<body id="page-top" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+<body id="page-top"
+    style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -28,7 +29,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content" style="background: #313145">
+            <div id="content">
 
                 <!-- Topbar -->
                 @include('admin.temp_admin.header')
@@ -42,10 +43,11 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer" style="background-color: #313145">
+            <footer class="sticky-footer" style="background-color: #006F1F">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto text-black">
-                        <p class="text-light">&copy; 2023 Nama Perusahaan. Hak Cipta Dilindungi.</p>
+                        <p class="text-light">&copy; Copyright siketas | KUD SAWIT JAYA. All Rights Reserved Designed
+                            and Developer by Rizky firmansyah x romi</p>
                     </div>
                 </div>
             </footer>

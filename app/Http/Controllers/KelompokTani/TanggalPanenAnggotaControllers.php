@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class TanggalPanenAnggotaControllers extends Controller
 {
+
     public function index()
     {
         $id_kelompok = Auth::user()->id_kelompok;

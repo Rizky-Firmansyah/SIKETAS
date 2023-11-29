@@ -6,7 +6,19 @@
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="teks-manajemen h3 mb-0 text-light">Data Kelompok</h1>
             </div>
-            <a href="/data-kelompok/create" class="btn btn-primary btn-sm mb-2">Tambah Data</a>
+        </div>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <a href="/data-kelompok" class="btn btn-primary btn-sm mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                    <path fill-rule="evenodd"
+                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                </svg>
+            </a>
+            <a href="/data-kelompok-panen/create/{{ $id_panen_kelompok }}" class="btn btn-primary btn-sm mb-2">Tambah
+                Data</a>
         </div>
         <div class="container">
 
@@ -17,44 +29,20 @@
                             <table class="table table-bordered table-sm">
                                 <thead>
                                     <tr>
-                                        <th rowspan="2">Kelompok Tani</th>
-                                        <th rowspan="2">Tanggal Keberangkatan</th>
-                                        <th rowspan="2">Tonase Lapangan</th>
-                                        <th rowspan="2">Jumlah Janjang</th>
-                                        <th rowspan="2">Tujuan PKS</th>
-                                        <th colspan="3">Identitas Pengendara</th>
-                                        <th colspan="3">Hasil PKS</th>
-                                        <th rowspan="2">Selisih (Kg)</th>
-                                        <th rowspan="2">Aksi</th>
-                                    </tr>
-                                    <tr>
-                                        <th>No SPB</th>
-                                        <th>Nama Supir</th>
-                                        <th>No Kendaraan</th>
-                                        <th>Bruto (Kg)</th>
-                                        <th>Sortasi (Kg)</th>
-                                        <th>Netto (Kg)</th>
+                                        <th>Kelompok Tani</th>
+                                        <th>Tanggal Panen</th>
+                                        <th>Tonase Lapangan</th>
+                                        <th>Jumlah Janjang</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($kelompok as $item)
+                                    @foreach ($join as $item)
                                         <tr>
-                                            <td>
-                                                <a href="/data-kelompok-panen/"
-                                                    class="btn btn-primary my-1 btn-sm">Lihat/Tambah
-                                                    Petani</a>
-                                            </td>
-                                            <td>{{ $item->tanggal_keberangkatan }}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>{{ $item->tujuan_pks }}</td>
-                                            <td>{{ $item->no_spb }}</td>
-                                            <td>{{ $item->nama_supir }}</td>
-                                            <td>{{ $item->no_kendaraan }}</td>
-                                            <td>{{ $item->bruto }}</td>
-                                            <td>{{ $item->sortasi }}</td>
-                                            <td>{{ $item->netto }}</td>
-                                            <td></td>
+                                            <td>{{ $item->kelompok }}</td>
+                                            <td>{{ $item->tanggal->format('d F Y') }}</td>
+                                            <td>{{ $item->totalTonase }}</td>
+                                            <td>{{ $item->totalJanjang }}</td>
                                             <td>
                                                 <a href="" class="btn btn-warning my-1 btn-sm">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -77,7 +65,13 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
+                                    <tr>
+                                        <td colspan="2"><strong>Total Keseluruhan</strong></td>
+                                        <td><strong>{{ $totalTonaseKeseluruhan }}</strong></td>
+                                        <td><strong>{{ $totalJanjangKeseluruhan }}</strong></td>
+                                        <td></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

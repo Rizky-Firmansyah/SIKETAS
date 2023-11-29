@@ -24,9 +24,9 @@ class CheckUser
         } elseif ($user && $this->checkAllowedKelompok($user->id_kelompok, $allowedKelompok)) {
             return $next($request);
         }
-        // return redirect('/logout');
         Auth::logout();
         return redirect('/login');
+        // return redirect('/logout');
         // return response()->view('welcome');
 
         // return $next($request);

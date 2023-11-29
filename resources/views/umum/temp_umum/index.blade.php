@@ -16,10 +16,6 @@
     {{-- Content --}}
     @yield('content')
     {{-- Footer --}}
-
-
-
-
     {{-- JavaScript --}}
     @include('umum.temp_umum.javascript')
 </body>

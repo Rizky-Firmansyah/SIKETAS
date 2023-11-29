@@ -14,15 +14,11 @@ return new class extends Migration {
     {
         Schema::create('tb_panen_kelompok', function (Blueprint $table) {
             $table->bigIncrements('id_panen_kelompok');
-            $table->integer('id_kelompok')->nullable();
+            $table->integer('id_tanggal_panen');
+            $table->integer('id_kelompok');
             $table->date('tanggal_keberangkatan');
-            $table->string('tujuan_pks');
-            $table->string('no_spb');
-            $table->string('nama_supir');
-            $table->string('no_kendaraan');
-            $table->integer('bruto')->nullable();
-            $table->integer('sortasi')->nullable();
-            $table->integer('netto')->nullable();
+            $table->integer('total_tonase');
+            $table->integer('total_janjang');
             $table->timestamps();
         });
     }

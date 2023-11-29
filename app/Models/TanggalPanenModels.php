@@ -29,6 +29,9 @@ class TanggalPanenModels extends Model
         return $this->belongsTo(RoleModels::class, 'id_kelompok', 'id_kelompok');
     }
 
-
+    public function kelompokPanen()
+    {
+        return $this->belongsTo(KelompokPanenModels::class, 'id_panen_kelompok', 'id_panen_kelompok');
+    }
 
 }

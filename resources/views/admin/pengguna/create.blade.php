@@ -41,7 +41,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Role Pengguna</label>
                                 <select class="custom-select" name="role">
-                                    <option selected>Pilih Role Pengguna</option>
+                                    <option selected disabled>Pilih Role Pengguna</option>
                                     @foreach ($kelompok as $item)
                                         <option value="{{ $item->id_kelompok }}">{{ $item->kelompok }}</option>
                                     @endforeach

@@ -1,15 +1,19 @@
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #313145">
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #3A3737">
 
     {{-- <!-- Sidebar - Brand -->
     <div class="sidebar-brand d-flex flex-column align-items-center justify-content-center">
         <img src="{{ asset('assets/images/logo.png') }}" alt="" width="40" height="40">
     </div> --}}
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="" width="40" height="40">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center">
+        <div class="sidebar-brand-icon">
+            <i class="far fa-user-circle fa-lg"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SIKETAS</div>
+        <div class="sidebar-brand-text mx-3">
+            <span>
+                Admin
+            </span>
+        </div>
     </a>
 
     <!-- Divider -->
@@ -35,13 +39,15 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Data Pengguna</span>
+            <span>Data Master</span>
         </a>
         <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/data-role">Data Role</a>
                 <a class="collapse-item" href="/data-user">Data User</a>
+                <a class="collapse-item" href="/data-sopir">Data Nama Sopir</a>
+                <a class="collapse-item" href="/data-kendaraan">Data Kendaraan</a>
             </div>
         </div>
     </li>
@@ -74,7 +80,7 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/tanggal-panen">Data Panen Anggota</a>
-                <a class="collapse-item" href="/data-kelompok">Data Panen Kelompok</a>
+                <a class="collapse-item" href="/data-panen-kelompok">Data Panen Kelompok</a>
             </div>
         </div>
     </li>
